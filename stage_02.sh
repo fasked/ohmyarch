@@ -17,12 +17,11 @@ echo "127.0.1.1 nuuk"      >> /etc/hosts
 mkinitcpio -P
 
 # Password
-passwd
+echo -e "root_default_password" | passwd 
 
 # Efi
 pacman -S efibootmgr
 efibootmgr --disk /dev/sda --part 1 --create --label "Arch Linux" --loader /vmlinuz-linux --unicode "root=UUID=$(blkid -s UUID -o value /dev/sda2) rw initrd=\initramfs-linux.img" --verbose
-
 
 # Create users
 ARCH_USER="fasked"
