@@ -33,7 +33,7 @@ pacman -S xorg-xinit xorg-server
 pacman -S plasma-desktop plasma-nm
 
 # Install develop packages
-pacman -S base-devel openssh vim git subversion qtcreator
+pacman -S base-devel fish openssh vim git subversion qtcreator
 
 # Install misc
 pacman -S chromium ark filelight konsole kate kcalc kwrite kruler kcolorchooser gwenview okular spectacle svgpart 
@@ -43,4 +43,8 @@ echo "exec startplasma-x11" > /home/$ARCH_USER/.xinitrc
 
 # Enable NetworkManager
 systemctl enable NetworkManager.service
+
+# Set fish as default shell
+chsh --shell /usr/bin/fish $ARCH_USER
+
 
