@@ -33,7 +33,7 @@ pacman -S xorg-xinit xorg-server
 pacman -S plasma-desktop plasma-nm
 
 # Install develop packages
-pacman -S base-devel fish openssh vim git subversion docker qtcreator
+pacman -S base-devel fish openssh vim git subversion docker qtcreator postgresql-libs
 
 # Install misc
 pacman -S chromium ark filelight konsole kate kcalc kwrite kruler kcolorchooser gwenview okular spectacle svgpart 
