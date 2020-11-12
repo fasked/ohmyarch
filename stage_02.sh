@@ -36,7 +36,7 @@ pacman -S plasma-desktop plasma-nm
 pacman -S base-devel fish openssh vim git subversion docker qtcreator postgresql-libs
 
 # Install misc
-pacman -S chromium ark filelight konsole kate kcalc kwrite kruler kcolorchooser gwenview okular spectacle svgpart 
+pacman -S pacman-contrib chromium ark filelight konsole kate kcalc kwrite kruler kcolorchooser gwenview okular spectacle svgpart 
 
 # Configure startx
 echo "exec startplasma-x11" > /home/$ARCH_USER/.xinitrc
