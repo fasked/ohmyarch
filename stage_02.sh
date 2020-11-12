@@ -25,12 +25,12 @@ efibootmgr --disk /dev/sda --part 1 --create --label "Arch Linux" --loader /vmli
 
 # Create users
 ARCH_USER="fasked"
-useradd -m $ARCH_USER
+useradd -m -G wheel,audio,network  $ARCH_USER
 echo -e "my_default_password" | passwd $ARCH_USER
 
 # Install xorg and plasma
 pacman -S xorg-xinit xorg-server 
-pacman -S plasma-desktop plasma-nm
+pacman -S plasma-desktop plasma-nm plasma-pa kscreen kwalletmanager
 
 # Install develop packages
 pacman -S base-devel fish openssh vim git subversion docker qtcreator postgresql-libs
