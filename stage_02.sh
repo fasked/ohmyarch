@@ -21,7 +21,7 @@ echo -e "root_default_password" | passwd
 
 # Efi
 pacman -S efibootmgr
-efibootmgr --disk /dev/sda --part 1 --create --label "Arch Linux" --loader /vmlinuz-linux --unicode "root=UUID=$(blkid -s UUID -o value /dev/sda2) rw initrd=\initramfs-linux.img" --verbose
+efibootmgr --disk /dev/sda --part 1 --create --label "Arch Linux" --loader /vmlinuz-linux --unicode "root=UUID=$(blkid -s UUID -o value /dev/sda2) rw nvidia-drm.modeset=1 initrd=\amd-ucode.img initrd=\initramfs-linux.img" --verbose
 
 # Create users
 ARCH_USER="fasked"
@@ -30,10 +30,11 @@ echo -e "my_default_password" | passwd $ARCH_USER
 
 # Install xorg and plasma
 pacman -S xorg-xinit xorg-server 
+pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk
 pacman -S plasma-desktop plasma-nm plasma-pa kscreen kwalletmanager
 
 # Install develop packages
-pacman -S base-devel fish openssh vim git subversion docker qtcreator postgresql-libs
+pacman -S base-devel fish openssh vim git subversion docker gdb qtcreator postgresql-libs qt5-websockets
 
 # Install misc
 pacman -S pacman-contrib chromium ark filelight konsole kate kcalc kwrite kruler kcolorchooser gwenview okular spectacle svgpart 

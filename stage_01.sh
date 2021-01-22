@@ -9,7 +9,7 @@ timedatectl status
 
 # Partition the disks
 sfdisk /dev/sda << EOF
-    start=2048, size=1048576, type=ef
+    start=2048, size=1048576, type=ef, bootable
     type=83
 EOF
 
