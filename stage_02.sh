@@ -31,7 +31,7 @@ echo -e "my_default_password" | passwd $ARCH_USER
 # Install xorg and plasma
 pacman -S xorg-xinit xorg-server 
 pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk
-pacman -S plasma-desktop plasma-nm plasma-pa kscreen kwalletmanager
+pacman -S plasma-desktop plasma-nm plasma-pa kscreen kdialog kwalletmanager
 
 # Install develop packages
 pacman -S base-devel fish openssh vim git subversion docker gdb qtcreator postgresql-libs qt5-websockets
