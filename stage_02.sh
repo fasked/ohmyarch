@@ -28,26 +28,37 @@ ARCH_USER="fasked"
 useradd -m -G wheel,audio,network  $ARCH_USER
 echo -e "my_default_password" | passwd $ARCH_USER
 
-# Install xorg and plasma
+# Install video
 pacman -S xorg-xinit xorg-server 
 pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk
-pacman -S plasma-desktop plasma-nm plasma-pa kscreen kdialog kwalletmanager
+pacman -S nvidia
 
 # Install develop packages
-pacman -S base-devel fish openssh vim git subversion docker gdb qtcreator postgresql-libs qt5-websockets
+pacman -S base-devel fish openssh vim git subversion docker gdb postgresql-libs qt5-websockets
+
+# Install WM
+pacman -S herbsluftwm rofi alacritty chromium qtcreator
 
 # Install misc
-pacman -S pacman-contrib chromium ark filelight konsole kate kcalc kwrite kruler kcolorchooser gwenview okular spectacle svgpart 
+pacman -S pacman-contrib 
 
 # Configure startx
-echo "exec startplasma-x11" > /home/$ARCH_USER/.xinitrc
+echo "exec /usr/bin/herbsluftwm" > /home/$ARCH_USER/.xinitrc
 
 # Enable NetworkManager
 systemctl enable NetworkManager.service
 
-# Enable docker
-systemctl enable docker.service
-
 # Set fish as default shell
 chsh --shell /usr/bin/fish $ARCH_USER
 
+# AUR packages:
+# - pikaur
+# - polybar
+# - slack
+# - zoom
+# - disable-c6-systemd
+# - reflector-mirrorlist-update
+# - ttf-meslo
+
+# install dotfiles
+# install ssh and gpg keys
