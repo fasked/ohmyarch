@@ -34,7 +34,7 @@ pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk
 pacman -S nvidia
 
 # Install develop packages
-pacman -S base-devel fish openssh vim git subversion docker gdb postgresql-libs qt5-websockets
+pacman -S base-devel fish openssh nvim git subversion docker gdb postgresql-libs qt5-websockets
 
 # Install WM
 pacman -S herbsluftwm rofi alacritty chromium qtcreator
@@ -62,3 +62,4 @@ chsh --shell /usr/bin/fish $ARCH_USER
 
 # install dotfiles
 # install ssh and gpg keys
+
